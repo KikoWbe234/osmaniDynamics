@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmani Dynamics | Architecture & Interior Design</title>
+    <style>
+        /* Modern Minimalist Styles */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #f4f4f4;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .hhhhh{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Adds space between the image and the text */
+            margin-top: 20px;
+        }
+
+        header {
+            padding: 40px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+        }
+
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.5;
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 150px 10%;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+
+        .project-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .project-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+
+        .services-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            padding: 60px 10%;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #fff;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #111;
+        }
+
+        /* TITLE */
+        .title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .line {
+            flex: 1;
+            height: 1px;
+            background: #000;
+            margin-left: 20px;
+        }
+
+        /* CONTENT */
+        .dddd {
+            display: flex;
+            gap: 60px;
+        }
+
+        /* LEFT IMAGE */
+        .left img {
+            width: 500px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* RIGHT SIDE */
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .small-img {
+            width: 350px;
+            margin-bottom: 40px;
+        }
+
+        /* TEXT */
+        .text h3 {
+            letter-spacing: 3px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text p {
+            color: #444;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+
+            /* =====================
+               HEADER + NAV
+               ===================== */
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 0;
+                padding: 10px 0;
+                font-size: 0.9rem;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 1.8rem;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+
+            /* =====================
+               SECTIONS PADDING
+               ===================== */
+            section {
+                padding: 70px 20px;
+            }
+
+            .hero {
+                padding: 100px 20px;
+            }
+
+            .hero img {
+                max-width: 280px;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            /* =====================
+               TITLES
+               ===================== */
+            .title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .line {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            /* =====================
+               TEXT UNDER IMAGES
+               ===================== */
+            .hhhhh,
+            .dddd,
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-left: 0 !important;
+            }
+
+            .left img,
+            .small-img {
+                width: 100%;
+                max-width: 100%;
+                height: auto !important;
+                margin-bottom: 20px;
+                order: -1; /* мали слики одат први */
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .text {
+                max-width: 100%;
+            }
+
+            .text p {
+                max-width: 100%;
+            }
+
+            .about-content > div {
+                width: 100%;
+            }
+
+            /* =====================
+               PROJECT IMAGE HEIGHT
+               ===================== */
+            .project-item img {
+                height: 250px;
+            }
+
+            /* =====================
+               FOOTER
+               ===================== */
+            footer {
+                padding: 50px 20px;
+                text-align: center;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Osmani Dynamics</div>
+    <nav>
+        <a href="#vision">Визија</a>
+        <a href="#projects">Проекти</a>
+        <a href="#about">За нас</a>
+        <a href="#contact">Контак</a>
+    </nav>
+</header>
+
+<section class="hero fade-in">
+    <img src="FInal%20logo.png" alt="Osmani Dynamics Main Cover">
+    <h2>Модерна архитектура што ја зголемува вредноста на вашата инвестиција.</h2>
+</section>
+
+<section id="vision" class="fade-in">
+    <div class="title">
+        <h2>Визија и вредности</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="hhhhh">
+
+        <div class="left" style=>
+            <img src="hodnik.jpg" alt="">
+        </div>
+
+        <div >
+            <div class="text">
+                <p>
+                    "Верувам дека квалитетната
+                    архитектура е многу повеќе од
+                    вешто комбинирање на стилот,
+                    формата и функцијата.
+                    Дизајнот е, пред се, начин на
+                    раскажување приказни."
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="vision" class="fade-in">
+    <div class="title">
+        <h2>Ваша визија</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="dddd" style="margin-left: 150px">
+
+        <div class="left">
+            <img src="poslednajpg.jpg" alt="">
+        </div>
+
+        <div class="right">
+
+            <img src="plan.jpg" alt="" class="small-img" style="height:150px; width: 200px;">
+
+            <div class="text">
+                <h3>ВАШАТА ИДЕЈА МОЖЕ<br>ДА СТАНЕ РЕАЛНОСТ</h3>
+
+                <p>
+                    Секој голем проект започнува со една едноставна идеја.
+                    Тука е просторот каде што вашите замисли добиваат форма.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="projects" class="fade-in">
+    <div class="title">
+        <h2>Моj проекти</h2>
+        <div class="line"></div>
+    </div>
+    <p style="margin-bottom: 30px;">НАСКОРО...</p>
+</section>
+
+<section id="about" class="fade-in">
+    <div class="title">
+        <h2>За нас</h2>
+        <div class="line"></div>
+    </div>
+    <div class="about-image">
+        <img src="img_1.png" style="width: 100%; height: 260px; margin-bottom: 60px;">
+    </div>
+
+    <div class="about-content" style="margin-left: 390px">
+
+        <div>
+            <h3>НАЧИНИ НА РАБОТА</h3>
+            <ul>
+                <li>Архитектонско Рендерирање</li>
+                <li>Компјутерски Потпомогнат Дизајн (CAD)</li>
+                <li>Дизајн на Ентериер</li>
+                <li>Комуникација и Соработка</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>ОСНОВАЧ</h3>
+            <li>Етјан Османи 2022 - сега</li>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <h2 style="margin-bottom: 30px; letter-spacing: 5px;">КОНТАК</h2>
+    <div class="contact-info">
+        <p>TELEPHONE: +389-75-253-315</p>
+        <p>INSTAGRAM: <a href="https://instagram.com/od_archstudio" target="_blank">@od_archstudio</a></p>
+        <p>EMAIL: <a href="mailto:osmanidynamics@gmail.com">osmanidynamics@gmail.com</a></p>
+        <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Osmani Dynamics. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Simple Scroll Animation Logic
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
+</body>
